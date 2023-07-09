@@ -1,0 +1,9 @@
+--Admin crud operations,
+--Individual components perform their neccessary crud operations
+--Incorporating of the components to the pages they form
+--Adding Routing and changing the App.tsx to be holding only the routes
+--Refactor and testing of the pages & components functionality, whether they actually make the correct requests for their crud operations and whether they work
+--Authentication so as to separate various functionality(adding products and all that stuff)
+--finally, styling of the components will be the very last step preferably using bootcrap or tailshit
+
+v2 functionality: searching for products using name, filter using price.

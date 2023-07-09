@@ -11,7 +11,7 @@ export default function SignUpForm({ onSubmit }) {
   const [role, setRole] = useState("buyer");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: Event) => {
     event.preventDefault();
 
     // Check if the email already exists in your database
