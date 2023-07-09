@@ -7,3 +7,5 @@
 --finally, styling of the components will be the very last step preferably using bootcrap or tailshit
 
 v2 functionality: searching for products using name, filter using price.
+setOrderDetails(someVariableFromTheForm); //this gets pretty complicated really fast, will be refactored to allow user to input order from the form or better, on button that is on product , on v2
+    c
