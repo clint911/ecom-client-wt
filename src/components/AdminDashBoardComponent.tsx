@@ -1,25 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 /* admin: Checking all users, orders, products, reviews */
+import { userData, Reviews, Products, Orders } from "../InterfacesAndTypes/ApiInterfaces";
 function AdminDashboard() {
   const [users, setUsersState] = useState<userData[]>([]);
   const [reviews, setReviews] = useState<Reviews[]>([]);
   const [products, setProducts] = useState<Products[]>([]);
   const [orders, setOrders] = useState<Orders[]>([]);
-  enum userRole {
-    admin,
-    buyer,
-    seller
-  }
-  interface userData {
-    userId: number;
-    email: string;
-    userName: string;
-    password: string;
-    address: string;
-    city: string;
-    country: string;
-    role: userRole
-  }
 
   async function fetchAllUsers(): Promise<userData[]> {
     const apiRoute = "http://localhost:8080/usersApi/users";
@@ -38,21 +24,7 @@ function AdminDashboard() {
       console.error("Error fetching users", error);
     }
   }
-  enum ProductRating {
-    one,
-    two,
-    three,
-    four,
-    five
-  }
-  interface Reviews {
-    reviewId: number;
-    productId: number;
-    userId: number;
-    productRating: ProductRating;
-    textContent: string;
-    dateOfReview: string;//TODO: refactor to use Date
-  }
+
   async function fetchAllReviews(): Promise<Reviews[]> {
     const apiRoute = "http://localhost:8080/reviewsApi/reviews";
     const response = await fetch(apiRoute);
@@ -70,13 +42,6 @@ function AdminDashboard() {
       console.error("Error fetching review", error);
     }
   }
-  interface Products {
-    productId: number;
-    price: number;
-    productName: string;
-    description: string;
-    imageUrl: string;
-  }
   async function fetchAllProducts(): Promise<Products[]> {
     const apiRoute = "http://localhost:8080/productsApi/products";
     const response = await fetch(apiRoute);
@@ -93,21 +58,6 @@ function AdminDashboard() {
     } catch (error) {
       console.error("Error fetching products", error);
     }
-  }
-  enum OrderStatus {
-    pending,
-    approved,
-    shipped,
-    completed,
-    failed
-  }
-  interface Orders {
-    orderId: number;
-    noOfProducts: number;
-    totalPrice: number;
-    orderStatus: OrderStatus;
-    date: string;//TODO: refactor implementation to use Date
-    productsOrdered: string;//TODO: refactor implementation to use array
   }
   async function fetchAllOrders(): Promise<Orders[]> {
     const apiRoute = "http://localhost:8080/ordersApi/orders";
