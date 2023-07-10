@@ -1,7 +1,7 @@
 import React, { useId } from "react";
 import { userRole, Products } from "../InterfacesAndTypes/ApiInterfaces";
 /* seller can basically send a post request to create product, kinda like a profile */
-function SellerDashboard({ products }) {
+export default function SellerDashboard({ products }) {
   async function createProduct() {
     const currUser: string | null = localStorage.getItem(useId());
     let Seller: userRole | null;

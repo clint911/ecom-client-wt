@@ -1,7 +1,7 @@
 import React from "react";
 import { ProductRating, Support, helpType } from "../InterfacesAndTypes/ApiInterfaces";
 
-export default funtion SupportForm() {
+export default function SupportForm() {
 
   async function createSupportRequest() {
     const _userId: number = 2;
