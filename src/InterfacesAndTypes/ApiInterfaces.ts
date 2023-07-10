@@ -55,4 +55,14 @@ export interface Orders {
   date: string;//TODO: refactor implementation to use Date
   productsOrdered: string;//TODO: refactor implementation to use array
 }
-
+export enum helpType {
+  return,
+  accountError,
+  other
+}
+export interface Support {
+  userId: number;
+  date: string;
+  help: helpType;
+  reason: string;
+}
