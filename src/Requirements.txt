@@ -1,6 +1,7 @@
 --Admin crud operations,
 --Individual components perform their neccessary crud operations
 --Incorporating of the components to the pages they form
+--Installing React Router and then starting on basic styling, a common navbar then component to component then from page to page
 --Adding Routing and changing the App.tsx to be holding only the routes
 --Refactor and testing of the pages & components functionality, whether they actually make the correct requests for their crud operations and whether they work
 --Authentication so as to separate various functionality(adding products and all that stuff)
